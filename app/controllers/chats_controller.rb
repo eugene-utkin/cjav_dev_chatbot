@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-  def index,
+  def index
   end
 
   def show
