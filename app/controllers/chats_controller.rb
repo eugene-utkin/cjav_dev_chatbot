@@ -4,5 +4,6 @@ class ChatsController < ApplicationController
   end
 
   def show
+    @chat = Chat.find_by(session_id: params[:id])
   end
 end
