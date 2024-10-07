@@ -7,13 +7,5 @@
 <%= button_to "Create Chat", chats_path, method: :post, data: { turbo: false } %>
 
 <div>
-  <% @chats.each do |chat| %>
-    <div>
-      <h2>
-        <a href="<%= chat_path(chat) %>">
-          <%= chat.session_id %>
-        </a>
-      </h2>
-    </div>
-  <% end %>
+
 </div>
