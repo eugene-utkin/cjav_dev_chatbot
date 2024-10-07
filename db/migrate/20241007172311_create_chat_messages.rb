@@ -2,7 +2,7 @@ class CreateChatMessages < ActiveRecord::Migration[7.1]
   def change
     create_table :chat_messages do |t|
       t.references :chat, null: false, foreign_key: true
-      t.text :content
+      t.text :content, limit: 4096
       t.string :role, default: "user"
 
       t.timestamps
