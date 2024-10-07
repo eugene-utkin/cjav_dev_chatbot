@@ -9,5 +9,7 @@ class ChatsController < ApplicationController
 
   def create
     @chat = Chat.create!
+  
+    redirect_to chat_path(@chat.session_id)
   end
 end
