@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_05_165859) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_07_172311) do
+  create_table "chat_messages", force: :cascade do |t|
+    t.integer "chat_id", null: false
+    t.text "content", limit: 4096
+    t.string "role", default: "user"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_chat_messages_on_chat_id"
+  end
+
   create_table "chats", force: :cascade do |t|
     t.string "session_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "chat_messages", "chats"
 end
