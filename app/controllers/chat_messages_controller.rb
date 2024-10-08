@@ -1,6 +1,6 @@
 class ChatMessagesController < ApplicationController
   def create
-
+    @chat = Chat.find(params[:chat_id])
   end
 
   private
