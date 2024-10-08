@@ -4,4 +4,8 @@ class ChatMessagesController < ApplicationController
   end
 
   private
+
+  def chat_messages_params
+
+  end
 end
