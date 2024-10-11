@@ -9,7 +9,9 @@
         </header>
 
         <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40 mt-4">
-          <%= button_to "Create Chat", chats_path, method: :post, data: { turbo: false } %>
+          <div class="flex max-w-3xl flex-col space-y-16">
+            <%= button_to "Create Chat", chats_path, method: :post, data: { turbo: false } %>
+          </div>
         </div>
 
         <div>
