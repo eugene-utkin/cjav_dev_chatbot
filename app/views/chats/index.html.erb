@@ -8,22 +8,24 @@
           </h1>
         </header>
 
-        <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40 mt-4">
-          <div class="flex max-w-3xl flex-col space-y-16">
-            <%= button_to "Create Chat", chats_path, method: :post, data: { turbo: false } %>
-          </div>
-        </div>
-
-        <div>
-          <% @chats.each do |chat| %>
-            <div>
-              <h2>
-                <a href="<%= chat_path(chat) %>">
-                  <%= chat.session_id %>
-                </a>
-              </h2>
+        <div class="mt-16 sm:mt-20">
+          <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40 mt-4">
+            <div class="flex max-w-3xl flex-col space-y-16">
+              <%= button_to "Create Chat", chats_path, method: :post, data: { turbo: false } %>
             </div>
-          <% end %>
+          </div>
+
+          <div>
+            <% @chats.each do |chat| %>
+              <div>
+                <h2>
+                  <a href="<%= chat_path(chat) %>">
+                    <%= chat.session_id %>
+                  </a>
+                </h2>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
