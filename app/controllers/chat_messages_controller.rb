@@ -5,7 +5,7 @@ class ChatMessagesController < ApplicationController
     if @chat_message.save
       render turbo_stream: turbo_stream.append(
         "chat_messages_#{@chat.id}",
-        @chat_message
+        partial: "chat_messages/chat_message"
       )
     end
   end
