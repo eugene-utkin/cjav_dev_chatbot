@@ -9,7 +9,7 @@ class ChatMessagesController < ApplicationController
         locals: { chat_message: @chat_message }
       )
     else
-      render
+      render json: @chat_message.errors
     end
   end
 
