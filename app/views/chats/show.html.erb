@@ -20,7 +20,8 @@
           <div class="mt-8">
             <form method="POST" action="/chat_messages">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            
+              <input type="hidden" name="chat_id" value="<%= @chat.id %>">
+
               <textarea name="chat_message[content]" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
 
               <div class="mt-4">
