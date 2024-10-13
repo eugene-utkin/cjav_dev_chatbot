@@ -8,6 +8,7 @@ class ChatMessagesController < ApplicationController
         partial: "chat_messages/chat_message",
         locals: { chat_message: @chat_message }
       )
+    else
     end
   end
 
