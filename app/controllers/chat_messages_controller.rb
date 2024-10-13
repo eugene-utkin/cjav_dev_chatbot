@@ -9,6 +9,7 @@ class ChatMessagesController < ApplicationController
         locals: { chat_message: @chat_message }
       )
     else
+      render
     end
   end
 
