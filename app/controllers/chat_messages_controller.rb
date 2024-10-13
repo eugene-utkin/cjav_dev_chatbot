@@ -6,7 +6,7 @@ class ChatMessagesController < ApplicationController
       render turbo_stream: turbo_stream.append(
         "chat_messages_#{@chat.id}",
         partial: "chat_messages/chat_message",
-        locals: {}
+        locals: { chat_message: @chat_message }
       )
     end
   end
