@@ -18,7 +18,7 @@
           </div>
 
           <div class="mt-8">
-            <form method="POST" action="/chat_messages" data-controller="chat-message-form">
+            <form method="POST" action="/chat_messages" data-controller="chat-message-form" data-action="turbo:submit-end->chat-message-form#reset">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <input type="hidden" name="chat_id" value="<%= @chat.id %>">
 
