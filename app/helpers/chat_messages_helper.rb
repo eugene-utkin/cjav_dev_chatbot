@@ -1,5 +1,5 @@
 module ChatMessagesHelper
-  def long_date
+  def long_date(date)
 
   end
 end
