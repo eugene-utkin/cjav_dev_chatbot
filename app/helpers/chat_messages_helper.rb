@@ -1,5 +1,5 @@
 module ChatMessagesHelper
   def long_date(date)
-    date.strftime("%B %Y %d")
+    date.strftime("%B %d %Y")
   end
 end
