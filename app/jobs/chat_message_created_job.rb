@@ -12,5 +12,6 @@ class ChatMessageCreatedJob < ApplicationJob
 
   def messages
     @chat_message
+      .chat
   end
 end
