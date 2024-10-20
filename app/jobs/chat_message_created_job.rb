@@ -9,4 +9,8 @@ class ChatMessageCreatedJob < ApplicationJob
     #
     # Send the response back to the chat
   end
+
+  def messages
+
+  end
 end
