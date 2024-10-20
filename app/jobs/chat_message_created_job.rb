@@ -6,5 +6,6 @@ class ChatMessageCreatedJob < ApplicationJob
     #
     # Send those to open ai
     #
+    # Send the response back to the chat
   end
 end
