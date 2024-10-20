@@ -3,5 +3,6 @@ class ChatMessageCreatedJob < ApplicationJob
 
   def perform(chat_message)
     # Collect the messages for this chat
+    #
   end
 end
