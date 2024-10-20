@@ -4,5 +4,6 @@ class ChatMessageCreatedJob < ApplicationJob
   def perform(chat_message)
     # Collect the messages for this chat
     #
+    # Send those to open ai
   end
 end
