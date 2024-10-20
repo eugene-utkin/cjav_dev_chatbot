@@ -5,5 +5,6 @@ class ChatMessageCreatedJob < ApplicationJob
     # Collect the messages for this chat
     #
     # Send those to open ai
+    #
   end
 end
