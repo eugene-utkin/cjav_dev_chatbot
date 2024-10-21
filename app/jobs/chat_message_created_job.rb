@@ -8,7 +8,8 @@ class ChatMessageCreatedJob < ApplicationJob
     response = client.chat(
       parameters: {
         model: "gpt-3.5-turbo",
-        messages: messages
+        messages: messages,
+        temperature: 0.9
       }
     )
 
