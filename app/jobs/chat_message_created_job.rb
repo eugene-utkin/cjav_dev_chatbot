@@ -3,7 +3,6 @@ class ChatMessageCreatedJob < ApplicationJob
 
   def perform(chat_message)
     @chat_message = chat_message
-    # Collect the messages for this chat
     #
     # Send those to open ai
     #
@@ -11,6 +10,7 @@ class ChatMessageCreatedJob < ApplicationJob
   end
 
   def messages
+    # Collect the messages for this chat
     @chat_message
       .chat
       .chat_messages
