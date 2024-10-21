@@ -7,7 +7,8 @@ class ChatMessageCreatedJob < ApplicationJob
     # Send those to open ai
     response = client.chat(
       parameters: {
-        model: "gpt-3.5-turbo"
+        model: "gpt-3.5-turbo",
+        messages: messages
       }
     )
 
