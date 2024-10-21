@@ -16,7 +16,9 @@ class ChatMessageCreatedJob < ApplicationJob
       .chat_messages
       .order(created_at: :asc)
       .map do |m|
+        {
 
+        }
       end
   end
 end
