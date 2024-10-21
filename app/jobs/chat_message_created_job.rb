@@ -5,7 +5,7 @@ class ChatMessageCreatedJob < ApplicationJob
     @chat_message = chat_message
 
     # Send those to open ai
-    #
+
     # Send the response back to the chat
   end
 
