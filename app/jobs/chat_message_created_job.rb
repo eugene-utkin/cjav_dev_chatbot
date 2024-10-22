@@ -12,6 +12,7 @@ class ChatMessageCreatedJob < ApplicationJob
         temperature: 0.9
       }
     )
+    response.dig()
 
     # Send the response back to the chat
   end
