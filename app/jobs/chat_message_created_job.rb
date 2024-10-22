@@ -12,7 +12,7 @@ class ChatMessageCreatedJob < ApplicationJob
         temperature: 0.9
       }
     )
-    answer = response.dig("choices")
+    answer = response.dig("choices", 0)
 
     # Send the response back to the chat
   end
