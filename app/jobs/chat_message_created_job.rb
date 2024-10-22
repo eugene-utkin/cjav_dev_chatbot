@@ -13,6 +13,7 @@ class ChatMessageCreatedJob < ApplicationJob
       }
     )
     answer = response.dig("choices", 0, "message", "content")
+    puts "Got response: #{answer}"
 
     # Send the response back to the chat
   end
