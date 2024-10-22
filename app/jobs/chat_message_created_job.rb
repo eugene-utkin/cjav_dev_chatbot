@@ -35,4 +35,6 @@ class ChatMessageCreatedJob < ApplicationJob
   end
 
   private
+
+  def client = OpenAI::Client.new(access_token: Rails.application.credentials.open_ai[:key])
 end
