@@ -29,4 +29,6 @@ class ChatMessageCreatedJob < ApplicationJob
         }
       end
   end
+
+  private
 end
