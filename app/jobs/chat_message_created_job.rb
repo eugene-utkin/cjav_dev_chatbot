@@ -16,7 +16,9 @@ class ChatMessageCreatedJob < ApplicationJob
     puts "Got response: #{answer}"
 
     # Create a new chat message with the response
-    system_message = ChatMessage.create!()
+    system_message = ChatMessage.create!(
+      role: "system"
+    )
 
     # Send the response back to the chat
   end
