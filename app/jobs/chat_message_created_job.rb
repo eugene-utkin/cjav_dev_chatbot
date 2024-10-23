@@ -4,6 +4,13 @@ class ChatMessageCreatedJob < ApplicationJob
   def perform(chat_message)
     @chat_message = chat_message
 
+    # Create a new chat message with the response
+    system_message = ChatMessage.create!(
+      role: "system",
+      content: answer,
+      chat: @chat_message.chat
+    )
+
     # Send those to open ai
     response = client.chat(
       parameters: {
@@ -15,13 +22,6 @@ class ChatMessageCreatedJob < ApplicationJob
     )
     answer = response.dig("choices", 0, "message", "content")
     puts "Got response: #{answer}"
-
-    # Create a new chat message with the response
-    system_message = ChatMessage.create!(
-      role: "system",
-      content: answer,
-      chat: @chat_message.chat
-    )
 
     # Send the response back to the chat
     Turbo::StreamsChannel.broadcast_append_to(
