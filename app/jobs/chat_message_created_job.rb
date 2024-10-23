@@ -23,6 +23,7 @@ class ChatMessageCreatedJob < ApplicationJob
     )
 
     # Send the response back to the chat
+    Turbo::StreamsChannel.broadcast_append_to()
   end
 
   def messages
