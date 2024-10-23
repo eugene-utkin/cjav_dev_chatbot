@@ -32,7 +32,7 @@ class ChatMessageCreatedJob < ApplicationJob
     puts "Got response: #{answer}"
 
     # Send the response back to the chat
-    Turbo::StreamsChannel.broadcast_append_to(
+    Turbo::StreamsChannel.broadcast_replace_to(
       "chat_messages_#{chat_message.chat.id}",
       target: "chat_messages_#{chat_message.chat.id}",
       partial: "chat_messages/chat_message",
