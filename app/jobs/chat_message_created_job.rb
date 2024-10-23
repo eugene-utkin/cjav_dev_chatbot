@@ -27,7 +27,7 @@ class ChatMessageCreatedJob < ApplicationJob
       "chat_messages_#{chat_message.chat.id}",
       target: "chat_messages_#{chat_message.chat.id}",
       partial: "chat_messages/chat_message",
-      locals:{}
+      locals:{ chat_message: system_message }
     )
   end
 
