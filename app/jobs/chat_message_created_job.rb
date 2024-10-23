@@ -7,7 +7,7 @@ class ChatMessageCreatedJob < ApplicationJob
     # Create a new chat message with the response
     system_message = ChatMessage.create!(
       role: "system",
-      content: answer,
+      content: "Thinking...",
       chat: @chat_message.chat
     )
 
