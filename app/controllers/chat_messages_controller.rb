@@ -3,6 +3,8 @@ class ChatMessagesController < ApplicationController
     @chat = Chat.find(params[:chat_id])
     @chat_message = @chat.chat_messages.create(chat_messages_params)
     if @chat_message.save
+      ChatMessageCreatedJob.perform_later(@chat_message)
+
       render turbo_stream: turbo_stream.append(
         "chat_messages_#{@chat.id}",
         partial: "chat_messages/chat_message",
