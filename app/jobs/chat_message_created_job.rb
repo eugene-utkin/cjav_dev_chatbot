@@ -9,7 +9,8 @@ class ChatMessageCreatedJob < ApplicationJob
       parameters: {
         model: "gpt-3.5-turbo",
         messages: messages,
-        temperature: 0.9
+        temperature: 0.9,
+        max_tokens: 150
       }
     )
     answer = response.dig("choices", 0, "message", "content")
