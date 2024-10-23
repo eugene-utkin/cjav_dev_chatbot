@@ -26,7 +26,8 @@ class ChatMessageCreatedJob < ApplicationJob
     Turbo::StreamsChannel.broadcast_append_to(
       "chat_messages_#{chat_message.chat.id}",
       target: "chat_messages_#{chat_message.chat.id}",
-      partial: "chat_messages/chat_message"
+      partial: "chat_messages/chat_message",
+      locals:{}
     )
   end
 
