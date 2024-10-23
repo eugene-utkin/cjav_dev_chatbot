@@ -11,6 +11,14 @@ class ChatMessageCreatedJob < ApplicationJob
       chat: @chat_message.chat
     )
 
+    # Send the response back to the chat
+    Turbo::StreamsChannel.broadcast_append_to(
+      "chat_messages_#{chat_message.chat.id}",
+      target: "chat_messages_#{chat_message.chat.id}",
+      partial: "chat_messages/chat_message",
+      locals:{ chat_message: system_message }
+    )
+
     # Send those to open ai
     response = client.chat(
       parameters: {
