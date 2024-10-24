@@ -31,6 +31,8 @@ class ChatMessageCreatedJob < ApplicationJob
     answer = response.dig("choices", 0, "message", "content")
     puts "Got response: #{answer}"
 
+    system_message.update!(content: answer)
+
     # Send the response back to the chat
     Turbo::StreamsChannel.broadcast_replace_to(
       "chat_messages_#{chat_message.chat.id}",
